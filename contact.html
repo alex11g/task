@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+    <link rel="icon" href="./img/logo2.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid">
+            <img class="logo ms-5" src="./img/logo.png" alt="">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link " href="./index.html">Home</a>
+                    <a class="nav-link " href="./upcaming_events.html">Upcaming Events</a>
+                    <a class="nav-link " href="./paste_events.html">Paste Events</a>
+                    <a class="nav-link " href="#">Contact</a>
+                    <a class="nav-link " href="./stats.html">Stats</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section id="titulo-principal">
+            <div id="carouselExample" class="carousel slide mt-4">
+                <div class="carousel-inner">
+                    <div class="carousel-item active caroimg d-flex justify-content-center align-items-center">
+                        <img src="https://th.bing.com/th/id/R.514f2ab02c4af3e692788528715cd56c?rik=QQcljLipSITx7A&pid=ImgRaw&r=0"
+                            class="img-m1" alt="fondo" />
+                        <div class="carousel-caption d-block p-0" id="titulo">
+                            <h2 class="text-dark text rounded-pill m-auto fs-1">CONTACT</h2>
+                        </div>
+                    </div>
+                </div>
+                <span class="carousel-control-prev" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <a href="./paste_events.html"><span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span></a>
+                </span>
+                <span class="carousel-control-next" data-bs-target="#carouselExample">
+                    <a href="./stats.html"><span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+                </span>
+            </div>
+        </section>
+        <form class="d-flex flex-column form-tres" action="./show_data.html" method="get">
+            <label>
+                Nombre:
+                <input type="text" name="Nombre" id="nombre-" required>
+            </label>
+            <label>
+                Email:
+                <input type="email" name="Email" id="email-" required>
+            </label>
+            <label>
+                Mensagge:
+                <textarea name="Mensagge" id="mensagge-" cols="20" rows="4"></textarea>
+            </label>
+            <div class="submit-dos">
+                <button type="submit" class="btn btn-primary submit-">Submit</button>
+            </div>
+        </form>
+    </main>
+    <footer class="d-flex justify-content-between align-items-center ">
+        <div class="img-footer">
+            <a href="#"><img class="imagenes" src="./img/icono-instgram.png" alt="foto"></a>
+            <a href="#"><img class="imagenes" src="./img/icono-facebook.png" alt="foto"></a>
+            <a href="#"><img class="imagenes" src="./img/icono-wasa.png" alt="foto"></a>
+        </div>
+        <p class="cohort mt-2 text-white">Cohort</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
