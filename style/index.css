@@ -165,6 +165,7 @@ table,td{
     box-shadow: -2px 0px 23px 4px rgba(0,0,0,0.72) !important;
     -webkit-box-shadow: -2px 0px 23px 4px rgba(0,0,0,0.72) !important;
     -moz-box-shadow: -2px 0px 23px 4px rgba(0,0,0,0.72) !important;
+    backdrop-filter: blur(3px) !important;
 }
 .left{
     margin-left: 10% !important;
