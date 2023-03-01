@@ -11,6 +11,17 @@ body{
     background-size: cover;
     min-height: 80vh;
 }
+h2{
+    border: 2px solid black !important;
+    background-color: rgba(255, 255, 255, 0.604);
+    width: 10em;
+}
+.precio2{
+    margin-left: 30% !important;
+}
+.targetas{
+    margin-left: 0.1em !important;
+}
 .logo{
     width: 150px;
 }
@@ -113,12 +124,10 @@ footer{
     background-color: rgb(32, 73, 73);
     border-top: 3px solid black;
 }
-.card{
-    box-shadow: -2px 5px 22px 5px rgba(0, 0, 0, 0.81);
--webkit-box-shadow: -2px 5px 22px 5px rgba(0, 0, 0, 0.81);
--moz-box-shadow: -2px 5px 22px 5px rgba(0, 0, 0, 0.81);
-}
 .card-img-top{
+    border-radius: 5px;
+}
+.card{
     box-shadow: -2px 5px 22px 5px rgba(0, 0, 0, 0.81);
 -webkit-box-shadow: -2px 5px 22px 5px rgba(0, 0, 0, 0.81);
 -moz-box-shadow: -2px 5px 22px 5px rgba(0, 0, 0, 0.81);
@@ -178,11 +187,20 @@ table,td{
 .carousel-control-prev-icon{
     width: 1.7em !important;
 }
+.carousel-control-prev{
+    padding-right: 5em !important;
+}
+.card-text{
+    min-height: 8em;
+}
 
 @media (min-width:320px) and (max-width:575px){
+    h2{
+       width: 8em;
+    }
     footer{
         flex-direction: column;
-        height: 15vh;
+        height: 20vh;
     }
     .imagenes{
         margin: 0;
@@ -204,5 +222,8 @@ table,td{
     }
     .left{
         margin-left: 0% !important;
+    }
+    .main-form{
+        display: flex !important;
     }
 }
