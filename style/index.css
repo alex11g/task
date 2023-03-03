@@ -17,7 +17,7 @@ h2{
     width: 10em;
 }
 .precio2{
-    margin-left: 30% !important;
+    margin-left: 20% !important;
 }
 .targetas{
     margin-left: 0.1em !important;
@@ -99,6 +99,9 @@ nav a:hover{
     height: 13em;
     object-fit: cover;
     margin-left: 10px;
+}
+.card{
+    width: 17rem !important;
 }
 .btn{
     display: inline !important;
