@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PASTE EVENTS</title>
+    <title>PAST EVENTS</title>
     <link rel="icon" href="./img/logo2.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,8 +26,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link " href="./index.html">Home</a>
-                    <a class="nav-link " href="./upcaming_events.html">Upcaming Events</a>
-                    <a class="nav-link " href="#">Paste Events</a>
+                    <a class="nav-link " href="./upcoming_events.html">Upcaming Events</a>
+                    <a class="nav-link " href="#">Past Events</a>
                     <a class="nav-link " href="./contact.html">Contact</a>
                     <a class="nav-link " href="./stats.html">Stats</a>
                 </div>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 <span class="carousel-control-prev" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <a href="./upcaming_events.html"><span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <a href="./upcoming_events.html"><span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span></a>
                 </span>
                 <span class="carousel-control-next" data-bs-target="#carouselExample">
@@ -55,33 +55,12 @@
                 </span>
             </div>
         </section>
-        <form class="row ms-3 mt-3">
-            <div class=" form-check col-md-4 col-lg-1 ">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Category</label>
+        <form class="row ms-3 mt-3  d-flex">
+            <div class="check d-flex" id="formCheck">
             </div>
-            <div class="form-check col-md-4 col-lg-1 ">
-                <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                <label class="form-check-label" for="exampleCheck1">Category</label>
-            </div>
-            <div class=" form-check col-md-4 col-lg-1 ">
-                <input type="checkbox" class="form-check-input" id="exampleCheck3">
-                <label class="form-check-label" for="exampleCheck1">Category</label>
-            </div>
-            <div class=" form-check col-md-4 col-lg-1 ">
-                <input type="checkbox" class="form-check-input" id="exampleCheck4">
-                <label class="form-check-label" for="exampleCheck1">Category</label>
-            </div>
-            <div class=" form-check col-md-4 col-lg-2 ">
-                <input type="checkbox" class="form-check-input" id="exampleCheck5">
-                <label class="form-check-label" for="exampleCheck1">Category</label>
-            </div>
-            <div class="busqueda col-md-12 col-lg-6" style="width: 40em;">
+            <div class="busqueda col-md-12 col-lg-6 text-center" style="width: 30em;">
                 <div class="input-group flex-nowrap">
-                    <input type="text" class="form-control span-text-dos" aria-label="Username"
-                        aria-describedby="addon-wrapping">
-                    <span class="input-group-text span-text" id="addon-wrapping"><img src="./img/lupa.png"
-                            style="width: 22px;" alt=""></span>
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" id="buscador">
                 </div>
             </div>
         </form>
@@ -102,6 +81,7 @@
         crossorigin="anonymous"></script>
 
         <script src="./js/data.js"></script>
+        <script src="./js/details.js"></script>
         <script src="./js/paste_events.js"></script>
 </body>
 

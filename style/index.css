@@ -196,6 +196,39 @@ table,td{
 .card-text{
     min-height: 8em;
 }
+.check{
+    width: 65% !important; 
+}
+.form-check{
+    margin-left: 40px;
+}
+.form-control{
+    border: 2px solid black !important;
+}
+
+.filtro-detalies{
+    width: 100% !important;
+}
+
+@media (min-width:576px) and (max-width:768px){
+    .form-check-label{
+        width: 80px;
+    }
+    .form-check{
+        margin-left: 0px;
+    }
+    .form-control{
+        margin-left: 150px !important;
+        margin-top: 10px !important;
+        padding-left: 400px !important;
+    }
+}
+
+
+
+
+
+
 
 @media (min-width:320px) and (max-width:575px){
     h2{
@@ -228,5 +261,16 @@ table,td{
     }
     .main-form{
         display: flex !important;
+    }
+    .check{
+      flex-direction: column;
+    }
+    .filtro-detalies{
+        width: 90% !important;
+        margin-top: 10px !important;
+        flex-direction: column;
+    }
+    .img-footer{
+        margin-top: 10px;
     }
 }
