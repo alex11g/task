@@ -27,7 +27,7 @@ fetch(url3)
         asistencia(eventoMayorAssistencia[0], $mayorAsistencia)
         const eventoMenorAsistencia = resultado.slice(0, 1)
         asistencia(eventoMenorAsistencia[0], $menorAsistencia)
-        const resultadoMayorCapacidad = fechaPasada.sort((event1, event2) => event1.capacity - event2.capacity).slice(-1) ///15 
+        const resultadoMayorCapacidad = fechaPasada.sort((event1, event2) => event1.capacity - event2.capacity).slice(-1)  
         asistencia(resultadoMayorCapacidad[0], $mayorCapacidad)
 
 
@@ -55,7 +55,7 @@ fetch(url3)
             const prices = categories[category].price
             const estimate = categories[category].estimate
             const capacity = categories[category].capacity
-            const porcentaje = (estimate * 100 / capacity).toFixed()
+            const porcentaje = (estimate * 100 / capacity).toFixed(2)
             const temple = () => {
                 return `
                 <tr>
