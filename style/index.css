@@ -164,9 +164,9 @@ label{
 }
 
 table,td{
-    border: 2px solid black !important;
     padding-top: 25px   !important;
 }
+
 .td{
     padding-top: 8px !important;
 }
@@ -186,6 +186,8 @@ table,td{
     box-shadow: -2px 0px 23px 8px rgba(0,0,0,0.79);
     -webkit-box-shadow: -2px 0px 23px 8px rgba(0,0,0,0.79);
     -moz-box-shadow: -2px 0px 23px 8px rgba(0,0,0,0.79);
+    min-width: 250px !important;
+    border-radius: 5px !important;
 }
 .carousel-control-prev-icon{
     width: 1.7em !important;

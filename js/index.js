@@ -1,12 +1,12 @@
 //------------------------------------task2---------------------------------
 
-const targetas = document.getElementById("targetas")
+const tarjetas = document.getElementById("tarjetas")
 
 
 
 ///////////////tarjetas dinamicas////////////////////////////////////7
 
-function targetasDos(array) {
+function tarjetasDos(array) {
    return `
 <div class="card mt-4" >
                 <img src="${array.image} " class="card-img-top mt-2" alt="foto-targeta">
@@ -19,37 +19,30 @@ function targetasDos(array) {
  </div>
 `
 }
-function filterFecha(array){
-   return  array.filter(e=> e.date >= data.currentDate)
-}
+
+
 
 function mensage(){
     return`
     <h2  class="text-center text-dark">No result of your search was found.</h2>`
 }
 
-function subirTargeta (array, elemento){
+function subirTarjeta (array, elemento){
     let template = ''
     if(array.length==0){
         template=mensage()
     }
     for( let valor of array ){
-        template += targetasDos( valor )
+        template += tarjetasDos( valor )
     }
     elemento.innerHTML = template
 }
-subirTargeta(data.events,targetas)
-
 
 
 //--------------------------task3---------------------------------
 
 ///////checkbox dinamicos///////////////////////////////////////
 const formCheck= document.getElementById("formCheck")
-
-
-let listaCategory= data.events.map(valor=> valor.category)
-let setListaCategory= Array.from(new Set(listaCategory))
 
 function check(dato){
 return `
@@ -66,15 +59,9 @@ function subir(array,elemento){
     }
     elemento.innerHTML = resultado
 }
-subir(setListaCategory,formCheck)
 
 
-
-//////filtrar/////////////////////////
-
-formCheck.addEventListener("change",e =>{
-    return subirTargeta(filtroCruzado(),targetas)
- })
+//////filtrar-checks/////////////////////////
 
 function filtrado(array){
     const input= Array.from(document.querySelectorAll("input[type='checkbox']:checked")) 
@@ -92,11 +79,6 @@ function filtrado(array){
 
 ////// filtrado busqueda/////////
 
-
-buscador.addEventListener("keyup", e=>{
-    return  subirTargeta(filtroCruzado(),targetas)
-})
-
 function filtradoBusqueda(array){
     const buscadorValue= buscador.value.toLowerCase()
     if(buscadorValue===0){
@@ -105,14 +87,41 @@ function filtradoBusqueda(array){
     const filtradoBusquedaDos= array.filter(valor=>{
         return valor.name.toLowerCase().includes(buscadorValue)
     })
-    console.log(filtradoBusquedaDos)
     return filtradoBusquedaDos
     
 }
-filtradoBusqueda(data.events)
+
 
 ///////// filtrado cruzadoo///////////
 
-function filtroCruzado(){
-    return filtrado( filtradoBusqueda( data.events ))
+function filtroCruzado(array){
+    return filtrado( filtradoBusqueda( array.events ))
 }
+
+
+//-----------task4---------------------------------
+
+
+
+const url= "https://mindhub-xj03.onrender.com/api/amazing"
+
+fetch(url)
+    .then(response => response.json())
+    .then(datos =>{
+        let miArray=datos
+        subirTarjeta(miArray.events,tarjetas)
+        let listaCategory= miArray.events.map(valor=> valor.category)
+        let setListaCategory= Array.from(new Set(listaCategory))
+        subir(setListaCategory,formCheck)
+        buscador.addEventListener("keyup", e=>{
+         return  subirTarjeta(filtroCruzado(miArray),tarjetas)
+        })
+        formCheck.addEventListener("change",e =>{
+             return subirTarjeta(filtroCruzado(miArray),tarjetas)
+         })
+
+    } )
+    .catch(err=> console.log(err))
+
+
+

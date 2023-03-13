@@ -1,36 +1,45 @@
 const detalies = document.getElementById("filtro-detalies")
 
 
-const parms = new URLSearchParams(location.search)
-
-const id = parms.get("id")
-
-let persona = data.events.find(elemento => elemento._id === id)
-
-function detalles(obje) {
-    const change= obje.estimate ? "estimate" : "assistance"
+function detalles(array) {
+    const change= array.estimate ? "estimate" : "assistance"
     return `
     <div class="col-md-8 filtro-detalies d-flex align-items-center">
                     <div class="col-md-4 ">
-                        <img src="${obje.image}" class="img-fluid rounded-start " alt="${obje.name} ">
+                        <img src="${array.image}" class="img-fluid rounded-start " alt="${array.name} ">
                     </div>
         <div class="card-body">
                         <h5 class="card-title">EVENTS</h5>
-                        <p class="card-text-dos">Name: ${obje.name} </p>
-                        <p class="card-text-dos">Date: ${obje.date} </p>
-                        <p class="card-text-dos">Description: ${obje.description} </p>
-                        <p class="card-text-dos">Category: ${obje.category} </p>
-                        <p class="card-text-dos">Place: ${obje.place} </p>
-                        <p class="card-text-dos">Capacity: ${obje.capacity} </p>
-                        <p class="card-text-dos"> ${change} : ${obje[change]} </p>
-                        <p class="card-text-dos">Price: ${obje.price} </p>
+                        <p class="card-text-dos">Name: ${array.name} </p>
+                        <p class="card-text-dos">Date: ${array.date} </p>
+                        <p class="card-text-dos">Description: ${array.description} </p>
+                        <p class="card-text-dos">Category: ${array.category} </p>
+                        <p class="card-text-dos">Place: ${array.place} </p>
+                        <p class="card-text-dos">Capacity: ${array.capacity} </p>
+                        <p class="card-text-dos"> ${change} : ${array[change]}</p>
+                        <p class="card-text-dos">Price: ${array.price} </p>
         </div>
     </div>
-    `
+`
 }
-function renderizar(obje, elemento) {
+function renderizar(array, elemento) {
     let temple = ""
-    temple += detalles(obje)
+    temple += detalles(array)
     elemento.innerHTML = temple
 }
-renderizar(persona, detalies)
+
+
+
+//----------------task4------------------//
+const url_ = "https://mindhub-xj03.onrender.com/api/amazing"
+fetch(url_)
+    .then(response => response.json())
+    .then(datos => {
+        let miArray = datos
+        const parms = new URLSearchParams(location.search)
+        const id = parms.get("id")
+        let persona = miArray.events.find(elemento => elemento._id == id)
+        renderizar(persona, detalies)
+    })
+    .catch(error => console.error(error))
+ 

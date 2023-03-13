@@ -1,47 +1,47 @@
-const targetas = document.getElementById("targetas")
+//------------------------------------task2---------------------------------
+const tarjetas = document.getElementById("tarjetas")
 
-function targetasDos(array) {
+
+
+///////////////tarjetas dinamicas////////////////////////////////////7
+
+function tarjetasDos(array) {
    return `
-   <div class="card mt-4" >
-   <img src="${array.image} " class="card-img-top mt-2" alt="foto-targeta">
-   <div class="card-body">
-       <h5 class="card-title text-center">${array.name} </h5>
-       <p class="card-text ">${array.description} </p>
-       <p class="precio">Price <strong class="ms-2">$ ${array.price} </strong> </p>
-       <a href="./info.html?id=${array._id}" class="btn btn-primary precio2 ">Go somewhere</a>
-   </div>
-</div>
+<div class="card mt-4" >
+                <img src="${array.image} " class="card-img-top mt-2" alt="foto-targeta">
+                <div class="card-body">
+                    <h5 class="card-title text-center">${array.name} </h5>
+                    <p class="card-text ">${array.description} </p>
+                    <p class="precio">Price <strong class="ms-2">$ ${array.price} </strong> </p>
+                    <a href="./info.html?id=${array._id}" class="btn btn-primary precio2 ">Go somewhere</a>
+                </div>
+ </div>
 `
-} 
-function filterFecha(array){
-    return  array.filter(e=> e.date >= data.currentDate)
- }
- 
+}
+
+
 
 function mensage(){
     return`
     <h2  class="text-center text-dark">No result of your search was found.</h2>`
 }
 
-function subirTargeta (array, elemento){
+function subirTarjeta (array, elemento){
     let template = ''
     if(array.length==0){
         template=mensage()
     }
     for( let valor of array ){
-            template += targetasDos( valor )
+        template += tarjetasDos( valor )
     }
     elemento.innerHTML = template
 }
-subirTargeta(filterFecha (data.events),targetas)
 
 
+//--------------------------task3---------------------------------
 
-
-
-
-let listaCategory= data.events.map(valor=> valor.category)
-let setListaCategory= Array.from(new Set(listaCategory))
+///////checkbox dinamicos///////////////////////////////////////
+const formCheck= document.getElementById("formCheck")
 
 function check(dato){
 return `
@@ -49,7 +49,6 @@ return `
 <input type="checkbox" class="form-check-input" value="${dato}" id="${dato}">
 <label class="form-check-label" for=${dato}>${dato} </label>
 </div>
-
 `
 }
 function subir(array,elemento){
@@ -59,15 +58,9 @@ function subir(array,elemento){
     }
     elemento.innerHTML = resultado
 }
-subir(setListaCategory,formCheck)
 
 
-
-//////filtrar//////////////
-
-formCheck.addEventListener("change",e =>{
-    return subirTargeta(filtroCruzado(),targetas)
- })
+//////filtrar-checks/////////////////////////
 
 function filtrado(array){
     const input= Array.from(document.querySelectorAll("input[type='checkbox']:checked")) 
@@ -83,27 +76,55 @@ function filtrado(array){
     return verificar
 }
 
-////// filtrado busqueda
-
-
-buscador.addEventListener("keyup", e=>{
-    return  subirTargeta(filtroCruzado(),targetas)
-})
+////// filtrado busqueda/////////
 
 function filtradoBusqueda(array){
     const buscadorValue= buscador.value.toLowerCase()
     if(buscadorValue===0){
         return array
     }
-    const filtradoBusquedaDos= array.filter(e=>{
-        return e.name.toLowerCase().includes(buscadorValue)
+    const filtradoBusquedaDos= array.filter(valor=>{
+        return valor.name.toLowerCase().includes(buscadorValue)
     })
     return filtradoBusquedaDos
+    
 }
 
 
 ///////// filtrado cruzadoo///////////
 
-function filtroCruzado(){
-    return filtrado( filtradoBusqueda( filterFecha (data.events) ))
+function filtroCruzado(array){
+    return filtrado(filtradoBusqueda(array))
 }
+
+
+//-----------task4---------------------------------//
+const fechafiltrada=(array)=>{
+    return array.events.filter(e => e.date >= array.currentDate)
+}
+
+
+const url= "https://mindhub-xj03.onrender.com/api/amazing"
+
+fetch(url)
+    .then(response => response.json())
+    .then(datos =>{
+        let miArray=datos
+        const fecha= fechafiltrada(miArray)
+        subirTarjeta(fechafiltrada(miArray) ,tarjetas)
+        let listaCategory= fecha.map(valor=> valor.category)
+        let setListaCategory= Array.from(new Set(listaCategory))
+        console.log(setListaCategory)
+        subir(setListaCategory,formCheck)
+        buscador.addEventListener("keyup", e=>{
+         return  subirTarjeta(filtroCruzado(fecha),tarjetas)
+        })
+        formCheck.addEventListener("change",e =>{
+             return subirTarjeta(filtroCruzado(fecha),tarjetas)
+         })
+    } )
+    .catch(error => console.error(error))
+    
+
+
+
