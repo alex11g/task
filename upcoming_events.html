@@ -51,22 +51,47 @@
                             class="visually-hidden">Previous</span></a>
                 </span>
                 <span class="carousel-control-next" data-bs-target="#carouselExample">
-                    <a href="./past_events.html"><span class="carousel-control-next-icon"
-                            aria-hidden="true"></span></a>
+                    <a href="./past_events.html"><span class="carousel-control-next-icon" aria-hidden="true"></span></a>
                 </span>
             </div>
         </section>
-        <form class="row ms-3 mt-3  d-flex">
-            <div class="check d-flex" id="formCheck">
-            </div>
-            <div class="busqueda col-md-12 col-lg-6 text-center" style="width: 30em;">
-                <div class="input-group flex-nowrap">
-                    <input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" id="buscador">
+
+        <div  class=" row targetas mt-5 justify-content-evenly" id="tarjetas">
+           
+            <form class="d-flex row ms-3 form-vue ">
+                <div class=" checkdos d-flex">
+                    <template v-for="categoria of categorias">
+                        <div class="form-check d-flex ">
+                            <label class=" form-check-label ">
+                                {{categoria}}
+                                <input type="checkbox" class="form-check-input" @change="filtroCheck" v-model="categoriasCkecked"
+                                    :value="categoria">
+                            </label>
+                        </div>
+                    </template>
+                    <div class="busqueda  ">
+                        <div class="input-group ">
+                            <input type="text" class="form-control" @keyup="filtroCheck" v-model="filtroBusqueda">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </form>
-        <div class=" row targetas mt-5 justify-content-evenly" id="tarjetas">
-    
+            </form>
+            <template v-if="fechaFiltrada.length > 0" v-for="fecha of fechaFiltrada ">
+                <div class="card mt-5">
+                    <img :src="fecha.image" class="card-img-top mt-2" alt="foto-targeta">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">{{fecha.name}} </h5>
+                        <p class="card-text ">{{fecha.description}}</p>
+                        <p class="precio">Price <strong class="ms-2">$ {{fecha.price}} </strong> </p>
+                    </div>
+                    <a :href="'./info.html?id='+fecha._id" class="btn btn-primary precio2 ">Go somewhere</a>
+                </div>
+            </template>
+            <template v-else>
+                <div class="row text-error">
+                    <h2>no results found</h2>
+                </div>
+            </template>
         </div>
     </main>
     <footer class="d-flex justify-content-between align-items-center ">
@@ -81,8 +106,9 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
-        <script src="./js/details.js"></script>
-        <script src="./js/upcaming_events.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="./js/upcoming_vue.js"></script>
 </body>
 
 </html>

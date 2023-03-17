@@ -35,9 +35,20 @@
     </nav>
     <main class="d-flex justify-content-center mt-5">
         <div class="card mb-3 div-info ">
-            <div class="row g-0 justify-content-center align-items-center left" id="filtro-detalies">
-                <div class="col-md-8 filtro-detalies d-flex align-items-center">
-                    
+            <div v-cloak class="col-md-8 filtro-detalies d-flex align-items-center" id="detalies">
+                <div class="col-md-4 ">
+                    <img :src="persona.image" class="img-fluid rounded-start " alt=" ">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">EVENTS</h5>
+                    <p class="card-text-dos">Name: {{persona.name}} </p>
+                    <p class="card-text-dos">Date: {{persona.date}}</p>
+                    <p class="card-text-dos">Description: {{persona.description}}</p>
+                    <p class="card-text-dos">Category: {{persona.category}}</p>
+                    <p class="card-text-dos">Place: {{persona.place}}</p>
+                    <p class="card-text-dos">Capacity: {{persona.capacity}}</p>
+                    <p class="card-text-dos"> {{change}} {{persona[change]}} </p>
+                    <p class="card-text-dos">Price: {{persona.price}} </p>
                 </div>
             </div>
         </div>
@@ -55,9 +66,9 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
 
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-
-        <script src="./js/details.js"></script>
+    <script src="./js/details_vue.js"></script>
 </body>
 
 </html>

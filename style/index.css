@@ -1,6 +1,6 @@
 *{
     font-family: 'Oswald', sans-serif; 
-    /* border: 2px solid red; */
+  
 }
 form{
     width: 94%;
@@ -18,6 +18,8 @@ h2{
 }
 .precio2{
     margin-left: 20% !important;
+    width: 150px !important;
+    margin-bottom: 10px !important;
 }
 .targetas{
     margin-left: 0.1em !important;
@@ -100,6 +102,10 @@ nav a:hover{
     object-fit: cover;
     margin-left: 10px;
 }
+.card-body{
+    margin-left: 0px !important;
+    margin-top: 14px !important;
+}
 .card{
     width: 17rem !important;
 }
@@ -120,9 +126,10 @@ nav a:hover{
 .cohort{
     margin-right: 5em;
     font-size: 30px;
+    padding-top: 20px;
 }
 footer{
-    height: 10vh;
+    height: 13vh;
     margin-top: 10em;
     background-color: rgb(32, 73, 73);
     border-top: 3px solid black;
@@ -186,8 +193,9 @@ table,td{
     box-shadow: -2px 0px 23px 8px rgba(0,0,0,0.79);
     -webkit-box-shadow: -2px 0px 23px 8px rgba(0,0,0,0.79);
     -moz-box-shadow: -2px 0px 23px 8px rgba(0,0,0,0.79);
-    min-width: 250px !important;
+    min-width: 230px !important;
     border-radius: 5px !important;
+    margin-left: 5px !important;
 }
 .carousel-control-prev-icon{
     width: 1.7em !important;
@@ -198,37 +206,48 @@ table,td{
 .card-text{
     min-height: 8em;
 }
-.check{
-    width: 65% !important; 
-}
-.form-check{
-    margin-left: 40px;
-}
+
 .form-control{
     border: 2px solid black !important;
+    
+   width: 25rem !important;
 }
 
 .filtro-detalies{
     width: 100% !important;
 }
-
-@media (min-width:576px) and (max-width:768px){
-    .form-check-label{
-        width: 80px;
-    }
-    .form-check{
-        margin-left: 0px;
-    }
-    .form-control{
-        margin-left: 150px !important;
-        margin-top: 10px !important;
-        padding-left: 400px !important;
-    }
+.form-vue{
+    width: 98% !important;
+}
+.form-check{
+    width: 8.8%;
+}
+.text-error{
+    text-align: center;
+    height: 100px;
+    padding-top: 55px !important;
+    margin-left: 2px !important;
+    width: 99% !important;
+}
+[v-cloak]{
+    display: none;
 }
 
-
-
-
+@media (min-width:576px) and (max-width:768px){
+    .checkdos{
+        flex-direction: column;
+        width: 100% !important;
+    }
+    .form-vue{
+        width: 80% !important;
+    }
+    .busqueda{
+        margin-top: 20px;
+    }
+    .filtro-detalies{
+        background-color: aquamarine;
+    }
+}
 
 
 
@@ -238,7 +257,7 @@ table,td{
     }
     footer{
         flex-direction: column;
-        height: 20vh;
+        height: 22vh;
     }
     .imagenes{
         margin: 0;
@@ -264,8 +283,8 @@ table,td{
     .main-form{
         display: flex !important;
     }
-    .check{
-      flex-direction: column;
+    .checkdos{
+        flex-direction: column;
     }
     .filtro-detalies{
         width: 90% !important;
@@ -275,4 +294,14 @@ table,td{
     .img-footer{
         margin-top: 10px;
     }
+    .form-vue{
+        width: 89% !important;
+    }
+    .carousel-control-next{
+        margin-right: 8px !important;
+    }
+    .form-control{
+        width: 0rem !important;
+    }
+    
 }
